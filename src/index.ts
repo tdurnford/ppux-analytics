@@ -71,69 +71,6 @@ if (file) {
         .writeRecords(results)
         .then(() => console.log("CSV file has been created successfully."))
         .catch((error) => console.error("Error writing CSV file:", error));
-
-      // results.push({
-      //   name: bindingName.getText(),
-      //   referenceCount: references.length,
-      //   codeReferenceCount: codeReferences.length,
-      //   codeReferences: `${Array.from(
-      //     new Set(codeReferences.map((ref) => ref.fileName))
-      //   )
-      //     .reduce<string[]>((acc, fp) => {
-      //       const file = project.getSourceFile(fp);
-      //       if (file) {
-      //         const identifiers = file.getDescendantsOfKind(
-      //           SyntaxKind.Identifier
-      //         );
-
-      //         const fcbIdentifiers = identifiers.filter(
-      //           (i) => i.getText() === bindingName.getText()
-      //         );
-      //         const result = fcbIdentifiers.map((i) => {
-      //           const lineNumber = i.getStartLineNumber();
-      //           const lineStart = i.getStartLinePos();
-      //           const startPosition = i.getStart() - lineStart;
-
-      //           return `${fp}:${lineNumber}:${startPosition}`.replace(
-      //             "/Users/durnford/Developer",
-      //             "."
-      //           );
-      //         });
-      //         acc.push(...result);
-      //       }
-      //       return acc;
-      //     }, [])
-      //     .join("\\r\\n")}`,
-      //   testReferenceCount: testReferences.length,
-      //   testReferences: `${Array.from(
-      //     new Set(testReferences.map((ref) => ref.fileName))
-      //   )
-      //     .reduce<string[]>((acc, fp) => {
-      //       const file = project.getSourceFile(fp);
-      //       if (file) {
-      //         const identifiers = file.getDescendantsOfKind(
-      //           SyntaxKind.Identifier
-      //         );
-
-      //         const fcbIdentifiers = identifiers.filter(
-      //           (i) => i.getText() === bindingName.getText()
-      //         );
-      //         const result = fcbIdentifiers.map((i) => {
-      //           const lineNumber = i.getStartLineNumber();
-      //           const lineStart = i.getStartLinePos();
-      //           const startPosition = i.getStart() - lineStart;
-
-      //           return `${fp}:${lineNumber}:${startPosition}`.replace(
-      //             "/Users/durnford/Developer",
-      //             "."
-      //           );
-      //         });
-      //         acc.push(...result);
-      //       }
-      //       return acc;
-      //     }, [])
-      //     .join("\\r\\n")}`,
-      // });
     }
   });
 }
